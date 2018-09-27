@@ -25,11 +25,11 @@ requirements:
     - python
     - pip
     - setuptools
-    - numpy >=1.11
+    - numpy
 
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - scipy
     - pyqt
     - pyqtgraph
