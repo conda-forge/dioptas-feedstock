@@ -7,7 +7,12 @@ Package license: GPL3
 
 Feedstock license: BSD 3-Clause
 
-Summary: The silx project aims at providing a collection of Python packages to support the development of data assessment, reduction and analysis applications at synchrotron radiation facilities.
+Summary: Dioptas is a Python-based program for on-the-fly data processing 
+  and exploration of two-dimensional X-ray diffraction area detector data. 
+  It is specifically designed for the large amount of data collected at XRD 
+  beamlines at synchrotrons. Its fast data reduction algorithm and graphical 
+  data exploration capabilities make it ideal for online data processing during 
+  XRD experiments and batch post-processing of large numbers of images.
 
 
 
