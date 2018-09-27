@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and py27]
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
@@ -26,16 +26,6 @@ requirements:
     - pip
     - setuptools
     - numpy >=1.11
-    - scipy
-    - pyqt
-    - pyqtgraph
-    - lmfit
-    - fabio
-    - pyfai
-    - pycifrw
-    - future
-    - scikit-image
-    - qtpy
 
   run:
     - python
