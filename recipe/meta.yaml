@@ -20,7 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('fortran') }}  
-
+    - {{ compiler('c') }}
   host:
     - python
     - pip
@@ -36,7 +36,7 @@ requirements:
     - future
     - scikit-image
     - qtpy
-
+    - cython
   run:
     - python
     - {{ pin_compatible('numpy') }}
