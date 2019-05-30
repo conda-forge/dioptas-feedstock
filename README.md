@@ -3,7 +3,7 @@ About dioptas
 
 Home: https://github.com/Dioptas/Dioptas
 
-Package license: GPL3
+Package license: GPL-3.0
 
 Feedstock license: BSD 3-Clause
 
