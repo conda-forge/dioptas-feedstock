@@ -1,4 +1,4 @@
-{% set version = "0.4.1" %}
+{% set version = "0.5.1" %}
 
 package:
   name: dioptas
@@ -6,18 +6,18 @@ package:
 
 source:
   url: https://github.com/Dioptas/Dioptas/archive/{{ version }}.tar.gz
-  sha256: d2cf86417429f5092fc9db7d7a745706c027dafac1ee546c9a87eb5fd6d0d335
+  sha256: 531d2e1cea1fee0cbf2a795acfa1a0d1e6df80cb7105bdb91ab0cc8531d0af1d
 
 build:
-  number: 1002
+  number: 0
   skip: true  # [win and py27]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - dioptas = dioptas:main
 
 requirements:
   build:
-    - {{ compiler('fortran') }}  
+    - {{ compiler('fortran') }}
   host:
     - python
     - pip
@@ -54,7 +54,7 @@ test:
 app:
   entry: dioptas
   type: desk
-  summary: "Dioptas"
+  summary: Dioptas
   icon: icon.png
 
 about:
@@ -62,9 +62,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: license.txt
-  summary: 'The silx project aims at providing a collection of Python packages
-  to support the development of data assessment, reduction and analysis
-  applications at synchrotron radiation facilities.'
+  summary: The silx project aims at providing a collection of Python packages to support the development of data assessment, reduction and analysis applications at synchrotron radiation facilities.
   doc_url: https://dioptas.readthedocs.io/en/stable/
   dev_url: https://github.com/Dioptas/Dioptas
 
