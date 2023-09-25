@@ -10,6 +10,7 @@ source:
   sha256: cb3019da250aada747ed024d7ed473ddc23be10b22aa996fd076656d5045ca23
 
 build:
+  skip: true  # [py<39]
   entry_points:
     - dioptas = scripts:dioptas.main
     # Requires sharedmem dependency not available in conda-forge
