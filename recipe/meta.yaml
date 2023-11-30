@@ -1,51 +1,56 @@
-{% set version = "0.4.1" %}
+{% set name = "dioptas" %}
+{% set version = "0.5.7" %}
 
 package:
-  name: dioptas
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/Dioptas/Dioptas/archive/{{ version }}.tar.gz
-  sha256: d2cf86417429f5092fc9db7d7a745706c027dafac1ee546c9a87eb5fd6d0d335
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
+  sha256: cb3019da250aada747ed024d7ed473ddc23be10b22aa996fd076656d5045ca23
 
 build:
-  number: 1002
-  skip: true  # [win and py27]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: true  # [py<39]
   entry_points:
-    - dioptas = dioptas:main
+    - dioptas = scripts:dioptas.main
+    # Requires sharedmem dependency not available in conda-forge
+    # - dioptas_batch = scripts:dioptas_batch.main
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   build:
-    - {{ compiler('fortran') }}  
+    - {{ compiler('c') }}
   host:
     - python
+    - setuptools >=45
+    - setuptools-scm >=6.2
+    - cython
     - pip
-    - setuptools
-    - numpy
-    - scipy
-    - pyqt
-    - pyqtgraph
-    - lmfit
-    - fabio
-    - pyfai
-    - pycifrw
-    - future
-    - scikit-image
-    - qtpy
   run:
     - python
-    - {{ pin_compatible('numpy') }}
-    - scipy
-    - pyqt
-    - pyqtgraph
-    - lmfit
-    - fabio
-    - pyfai
-    - pycifrw
+    - cython
     - future
-    - scikit-image
+    - h5py
+    - hdf5plugin
+    - lmfit
+    - pandas
+    - psutil
+    - pycifrw
+    - python-dateutil
+    - pyqt  # Use pyqt6 when available in conda-forge
+    - pyfai >=2023.1.0
+    - pyqtgraph
     - qtpy
+    - scikit-image
+    - watchdog
+    - numpy
+    - fabio
+    - scipy
+    # Optional dependency missing:
+    # - extra-data
+    # dioptas_batch dependency missing:
+    # - sharedmem
 
 test:
   imports:
@@ -53,21 +58,18 @@ test:
 
 app:
   entry: dioptas
-  type: desk
   summary: "Dioptas"
   icon: icon.png
 
 about:
   home: https://github.com/Dioptas/Dioptas
-  license: GPL-3.0
-  license_family: GPL
+  license: GPL-3.0-or-later
   license_file: license.txt
-  summary: 'The silx project aims at providing a collection of Python packages
-  to support the development of data assessment, reduction and analysis
-  applications at synchrotron radiation facilities.'
+  summary: GUI program for reduction and exploration of 2D X-ray diffraction data
   doc_url: https://dioptas.readthedocs.io/en/stable/
-  dev_url: https://github.com/Dioptas/Dioptas
+  dev_url: https://github.com/dioptas/dioptas
 
 extra:
   recipe-maintainers:
     - CPrescher
+    - t20100
