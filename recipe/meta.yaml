@@ -23,13 +23,13 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools >=45
-    - setuptools-scm >=6.2
-    - cython
     - pip
+    - poetry-core
+    - cython
+    - setuptools
+    - poetry-dynamic-versioning
   run:
     - python
-    - cython
     - future
     - h5py
     - hdf5plugin
@@ -37,18 +37,20 @@ requirements:
     - pandas
     - psutil
     - pycifrw
-    - python-dateutil
     - pyqt  # Use pyqt6 when available in conda-forge
-    - pyfai >=2023.1.0
+    - pyfai >=2023.5.0
     - pyqtgraph
     - qtpy
     - scikit-image
     - watchdog
+    - pyopengl
     - numpy
-    - fabio
     - scipy
+    - numexpr
     # Optional dependency missing:
     # - extra-data
+    # - pyopengl-accelerate
+    # - xypattern
     # dioptas_batch dependency missing:
     # - sharedmem
 
