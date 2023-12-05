@@ -66,7 +66,7 @@ app:
 about:
   home: https://github.com/Dioptas/Dioptas
   license: GPL-3.0-or-later
-  license_file: license.txt
+  # license_file: license.txt
   summary: GUI program for reduction and exploration of 2D X-ray diffraction data
   doc_url: https://dioptas.readthedocs.io/en/stable/
   dev_url: https://github.com/dioptas/dioptas
