@@ -1,5 +1,5 @@
 {% set name = "dioptas" %}
-{% set version = "0.5.7" %}
+{% set version = "0.5.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
-  sha256: cb3019da250aada747ed024d7ed473ddc23be10b22aa996fd076656d5045ca23
+  sha256: 2f3b2c5ac9a70b0bf746c42a5cf6b41b1e1ea34c39d1f77ae6956409064081c3
 
 build:
   skip: true  # [py<39]
@@ -23,13 +23,13 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools >=45
-    - setuptools-scm >=6.2
-    - cython
     - pip
+    - poetry-core
+    - cython
+    - setuptools
+    - poetry-dynamic-versioning
   run:
     - python
-    - cython
     - future
     - h5py
     - hdf5plugin
@@ -37,18 +37,20 @@ requirements:
     - pandas
     - psutil
     - pycifrw
-    - python-dateutil
     - pyqt  # Use pyqt6 when available in conda-forge
-    - pyfai >=2023.1.0
+    - pyfai >=2023.5.0
     - pyqtgraph
     - qtpy
     - scikit-image
     - watchdog
+    - pyopengl
     - numpy
-    - fabio
     - scipy
+    - numexpr
     # Optional dependency missing:
     # - extra-data
+    # - pyopengl-accelerate
+    # - xypattern
     # dioptas_batch dependency missing:
     # - sharedmem
 
