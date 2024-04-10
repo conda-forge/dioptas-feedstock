@@ -1,5 +1,5 @@
 {% set name = "dioptas" %}
-{% set version = "0.5.9" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
-  sha256: 2f3b2c5ac9a70b0bf746c42a5cf6b41b1e1ea34c39d1f77ae6956409064081c3
+  sha256: 21b9d85a7bafdebf0c9d0bbcd8c2dfd45543362fa26b50095f261f5a66bb3e47
 
 build:
   skip: true  # [py<39]
   entry_points:
     - dioptas = dioptas:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   build:
