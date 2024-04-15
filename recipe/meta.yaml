@@ -11,20 +11,17 @@ source:
 
 build:
   skip: true  # [py<39]
+  noarch: python
   entry_points:
     - dioptas = dioptas:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
-  build:
-    - {{ compiler('c') }}
   host:
     - python
     - pip
     - poetry-core
-    - cython
-    - setuptools
     - poetry-dynamic-versioning
   run:
     - python
