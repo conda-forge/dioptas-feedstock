@@ -10,7 +10,6 @@ source:
   sha256: 21b9d85a7bafdebf0c9d0bbcd8c2dfd45543362fa26b50095f261f5a66bb3e47
 
 build:
-  skip: true  # [py<39]
   noarch: python
   entry_points:
     - dioptas = dioptas:main
@@ -19,12 +18,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
     - poetry-core
     - poetry-dynamic-versioning
   run:
-    - python
+    - python >=3.8
     - h5py
     - hdf5plugin
     - lmfit
