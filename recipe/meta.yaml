@@ -36,7 +36,7 @@ requirements:
     - pyshortcuts
     - qtpy
     - scikit-image
-    - watchdog
+    - watchdog <6.0.0
     - pyopengl
     - xypattern
     - numpy
