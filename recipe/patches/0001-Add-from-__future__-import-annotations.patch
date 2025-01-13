@@ -1,0 +1,52 @@
+From 61073fa21030c472b24d44f4d080136ca2cd59a5 Mon Sep 17 00:00:00 2001
+From: Thomas VINCENT <thomas.vincent@esrf.fr>
+Date: Mon, 13 Jan 2025 10:00:59 +0100
+Subject: [PATCH] Add from __future__ import annotations
+
+---
+ dioptas/controller/MapController.py | 2 ++
+ dioptas/model/OverlayModel.py       | 2 ++
+ dioptas/model/PatternModel.py       | 1 +
+ 3 files changed, 5 insertions(+)
+
+diff --git a/dioptas/controller/MapController.py b/dioptas/controller/MapController.py
+index 7b156f3a..6ac727c9 100644
+--- a/dioptas/controller/MapController.py
++++ b/dioptas/controller/MapController.py
+@@ -17,6 +17,8 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
++from __future__ import annotations
++
+ import os
+ from PIL import Image
+ 
+diff --git a/dioptas/model/OverlayModel.py b/dioptas/model/OverlayModel.py
+index db9337b6..9074518f 100644
+--- a/dioptas/model/OverlayModel.py
++++ b/dioptas/model/OverlayModel.py
+@@ -17,6 +17,8 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
++from __future__ import annotations
++
+ 
+ from typing import Optional
+ import logging
+diff --git a/dioptas/model/PatternModel.py b/dioptas/model/PatternModel.py
+index 8058ee34..1f95a726 100755
+--- a/dioptas/model/PatternModel.py
++++ b/dioptas/model/PatternModel.py
+@@ -17,6 +17,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
++from __future__ import annotations
+ 
+ import logging
+ 
+-- 
+2.39.5
+
