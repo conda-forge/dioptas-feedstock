@@ -1,13 +1,14 @@
 {% set name = "dioptas" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
-  sha256: da69e1c4f0400e8a3773990acd1666a3492b2d1011bdb3be0bc6310d11465dda
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
+  sha256: 465f2f6dbded6900442f6681dc3058df906bdcff77455bf2e9d92db07ea2b852
 
 build:
   noarch: python
@@ -18,12 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - poetry-core
     - poetry-dynamic-versioning
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - h5py
     - hdf5plugin
     - lmfit
@@ -31,7 +32,7 @@ requirements:
     - psutil
     - pycifrw
     - pyqt  # Use pyqt6 when available in conda-forge
-    - pyfai ~=2023.5
+    - pyfai ~=2025.3
     - pyqtgraph
     - pyshortcuts
     - qtpy
@@ -50,6 +51,8 @@ requirements:
     # - sharedmem
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - dioptas
 
