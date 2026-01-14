@@ -1,6 +1,6 @@
 {% set name = "dioptas" %}
-{% set version = "0.7.1" %}
-{% set python_min = "3.9" %}
+{% set version = "0.7.2" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
-  sha256: cb6ebb3c566f5c16cd9f075f7c8245770b07550d4e5852c129246a4908208a84
+  sha256: e497fb639be3d4ffc89bf57f414adc8cc524b838af11a28ca06fe96b3143988b
 
 build:
   noarch: python
