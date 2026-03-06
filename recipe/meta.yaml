@@ -1,6 +1,6 @@
 {% set name = "dioptas" %}
 {% set version = "0.8.1" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -32,7 +32,7 @@ requirements:
     - psutil
     - pycifrw
     - pyqt  # Use pyqt6 when available in conda-forge
-    - pyfai ~=2025.3
+    - pyfai >=2025.12.1
     - pyqtgraph
     - pyshortcuts
     - qtpy
@@ -44,6 +44,7 @@ requirements:
     - scipy
     - numexpr
     - qt-material
+    - bitshuffle >=0.5.1
     # Optional dependency missing:
     # - extra-data
     # - pyopengl-accelerate
@@ -63,8 +64,8 @@ app:
 
 about:
   home: https://github.com/Dioptas/Dioptas
-  license: GPL-3.0-or-later
-  license_file: license.txt
+  license: MIT
+  license_file: LICENSE.txt
   summary: GUI program for reduction and exploration of 2D X-ray diffraction data
   doc_url: https://dioptas.readthedocs.io/en/stable/
   dev_url: https://github.com/dioptas/dioptas
