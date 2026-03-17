@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dioptas-feedsto
 
 Home: https://github.com/Dioptas/Dioptas
 
-Package license: GPL-3.0-or-later
+Package license: MIT
 
 Summary: GUI program for reduction and exploration of 2D X-ray diffraction data
 
