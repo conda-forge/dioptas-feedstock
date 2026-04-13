@@ -1,5 +1,5 @@
 {% set name = "dioptas" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.5" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
-  sha256: 6e57ee0db02cdeeb2d6a821ca0fe92361b4294df9ec52c15980599d7d516eb36
+  sha256: acddffa6e6351f25dedb9ab3f936fa8d5a530b9682db02b4c70ad00eef6eec0a
 
 build:
   noarch: python
@@ -45,6 +45,7 @@ requirements:
     - numexpr
     - qt-material
     - bitshuffle >=0.5.1
+    - xraydb >=4.5.8
     # Optional dependency missing:
     # - extra-data
     # - pyopengl-accelerate
