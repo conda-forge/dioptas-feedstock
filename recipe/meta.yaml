@@ -45,6 +45,7 @@ requirements:
     - numexpr
     - qt-material
     - bitshuffle >=0.5.1
+    - xraydb >=4.5.8
     # Optional dependency missing:
     # - extra-data
     # - pyopengl-accelerate
