@@ -46,6 +46,7 @@ requirements:
     - qt-material
     - bitshuffle >=0.5.1
     - xraydb >=4.5.8
+    - psygnal >=0.15.0,<0.16
     # Optional dependency missing:
     # - extra-data
     # - pyopengl-accelerate
