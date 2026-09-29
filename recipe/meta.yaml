@@ -1,14 +1,13 @@
 {% set name = "dioptas" %}
-{% set version = "0.8.5" %}
-{% set python_min = "3.11" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
-  sha256: acddffa6e6351f25dedb9ab3f936fa8d5a530b9682db02b4c70ad00eef6eec0a
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/dioptas-{{ version }}.tar.gz
+  sha256: fb3669991c8669154baeb3480d08f6272d56b8002291ba11ba92160b3733944b
 
 build:
   noarch: python
@@ -30,26 +29,28 @@ requirements:
     - lmfit
     - pandas
     - psutil
-    - pycifrw
-    - pyqt  # Use pyqt6 when available in conda-forge
+    - pyqt6 >=6.8
     - pyfai >=2025.12.1
     - pyqtgraph
     - pyshortcuts
     - qtpy
     - scikit-image
-    - watchdog
     - pyopengl
-    - xypattern
-    - numpy
+    - xypattern >=1.2.4,<2.0
+    - numpy >=2.0,<3.0
     - scipy
     - numexpr
     - qt-material
     - bitshuffle >=0.5.1
     - xraydb >=4.5.8
-    # Optional dependency missing:
+    - psygnal >=0.15.0,<0.16
+    # Missing dependencies:
+    # - peritheos
+    # - phasesmith
+    # Optional
     # - extra-data
     # - pyopengl-accelerate
-    # dioptas_batch dependency missing:
+    # dioptas_batch:
     # - sharedmem
 
 test:
