@@ -1,6 +1,5 @@
 {% set name = "dioptas" %}
 {% set version = "0.11.0" %}
-{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -30,26 +29,28 @@ requirements:
     - lmfit
     - pandas
     - psutil
-    - pycifrw
-    - pyqt  # Use pyqt6 when available in conda-forge
+    - pyqt6 >=6.8
     - pyfai >=2025.12.1
     - pyqtgraph
     - pyshortcuts
     - qtpy
     - scikit-image
-    - watchdog
     - pyopengl
-    - xypattern
-    - numpy
+    - xypattern >=1.2.4,<2.0
+    - numpy >=2.0,<3.0
     - scipy
     - numexpr
     - qt-material
     - bitshuffle >=0.5.1
     - xraydb >=4.5.8
-    # Optional dependency missing:
+    - psygnal>=0.15.1,<0.16
+    # Missing dependencies:
+    # - peritheos
+    # - phasesmith
+    # Optional
     # - extra-data
     # - pyopengl-accelerate
-    # dioptas_batch dependency missing:
+    # dioptas_batch:
     # - sharedmem
 
 test:
