@@ -43,7 +43,7 @@ requirements:
     - qt-material
     - bitshuffle >=0.5.1
     - xraydb >=4.5.8
-    - psygnal>=0.15.1,<0.16
+    - psygnal >=0.15.1,<0.16
     # Missing dependencies:
     # - peritheos
     # - phasesmith
